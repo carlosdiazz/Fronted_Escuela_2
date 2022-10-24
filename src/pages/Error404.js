@@ -1,9 +1,10 @@
 import React from 'react'
+import {HeaderPages} from '../components/Admin'
 
 export function Error404() {
   return (
-    <div>
-      <h3>Error 404</h3>
-    </div>
+    <>
+      <HeaderPages title="Error 404" />
+    </>
   )
 }

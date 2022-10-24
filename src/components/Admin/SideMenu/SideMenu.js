@@ -34,6 +34,12 @@ function MenuLeft(props) {
                 </h3>
             </Menu.Item>
 
+            <Menu.Item className='pedidoscss' as={Link} to={'/reportes'} active={pathname === "/reportes"}>
+                <h3>
+                    <Icon name="clipboard"/>Reportes por entidad
+                </h3>
+            </Menu.Item>
+
             {auth.me?.is_staff &&(
                 <Menu.Item as={Link} to={'/users'} active={pathname === "/users"}>
                 <h3>

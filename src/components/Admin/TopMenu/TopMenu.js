@@ -7,9 +7,7 @@ import logo1 from './logo.png';
 export function TopMenu() {
   const {auth, logout} = useAuth();
 
-
   const renderName = () => {
-    console.log(auth)
     if(auth.me?.user){
         return `${auth.me.user} `;
     }

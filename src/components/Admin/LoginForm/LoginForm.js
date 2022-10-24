@@ -14,7 +14,6 @@ export function LoginForm() {
     validationSchema: validationSchema(),
     onSubmit: async (formValue) => {
       try{
-        console.log("AA")
         const response = await loginApi(formValue)
         const access = response.token
         login(access)
