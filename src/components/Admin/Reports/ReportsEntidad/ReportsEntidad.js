@@ -1,6 +1,6 @@
 import React from 'react'
 import {Table} from 'semantic-ui-react'
-import {map} from 'lodash'
+import {map, size} from 'lodash'
 import moment from 'moment'
 
 export function ReportsEntidad(props) {
@@ -21,6 +21,7 @@ export function ReportsEntidad(props) {
 
       <Table.Body>
         {
+          size(dataReport) >0 ?
           map(dataReport,(data, index) => (
             <Table.Row key={index}>
               <Table.Cell>{data?.id_user.name}</Table.Cell>
@@ -28,7 +29,10 @@ export function ReportsEntidad(props) {
               <Table.Cell>{data.tanda}</Table.Cell>
               <Table.Cell>{data.total_hora}</Table.Cell>
             </Table.Row>
-          ))
+          )) : 
+          <Table.Row>
+            <Table.Cell>No hay data aun</Table.Cell>
+          </Table.Row>
         }
       </Table.Body>
     </Table>
