@@ -24,7 +24,7 @@ function MenuLeft(props) {
         <Menu fixed="left" borderless className="side" vertical>
             <Menu.Item className='pedidoscss' as={Link} to={'/'} active={pathname === "/"}>
                 <h3>
-                    <Icon name="home"/>Pedidos
+                    <Icon name="home"/>home
                 </h3>
             </Menu.Item>
 
