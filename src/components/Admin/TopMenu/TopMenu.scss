@@ -1,0 +1,29 @@
+.imagen{
+    width: 170px;
+    height: 70px;
+}
+
+.top-menu-admin {
+    background-color: #28659e !important;
+    &__logo {
+        width: 250px;
+        height: 55px;
+        background-color: #0a4883 !important;  
+    }
+ 
+ 
+    i.icon{
+        margin: 0 !important;
+    }
+    .cuadrado{
+        background-color: #0a4883 !important;
+    }
+    .nombre{
+        background-color: rgb(167, 195, 247) !important;
+        width:fit-content;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-style: italic;
+        font-size: medium;
+    }
+ 
+    }
