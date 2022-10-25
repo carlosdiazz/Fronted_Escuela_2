@@ -9,6 +9,9 @@ import {Loader} from 'semantic-ui-react'
 import {ModalBasic} from '../../components/Common'
 import { map } from 'lodash';
 
+import jsPDF from "jspdf";
+import autoTable from 'jspdf-autotable';
+
 export function ReportAdmin() {
 
 
@@ -25,6 +28,11 @@ export function ReportAdmin() {
 
     },[showModal])
 
+    const generatePDF = () => {
+        let doc = new jsPDF('p',"pt","a4");
+        doc.autoTable({html: '#Report'})
+        doc.save("reporte.pdf")
+    }
 
     const openCloseModal = () => setshowModal((prev) => !prev)
 
@@ -38,6 +46,8 @@ export function ReportAdmin() {
         title="Reportes por entidad"
         btnTitle="Generar nuevo reporte"
         btnClick={generarReporte}
+        btnTitleTwo="Imprimir Reporte"
+        btnClickTwo={generatePDF}
     />
 
     <ModalBasic
