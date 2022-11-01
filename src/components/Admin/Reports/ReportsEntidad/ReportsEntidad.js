@@ -54,7 +54,7 @@ export function ReportsEntidad(props) {
       </Table.Header>
     </Table>
 
-    <Table color='blue' id="Report">
+    <Table color='blue' id="Report2">
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell>Name</Table.HeaderCell>

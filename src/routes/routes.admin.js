@@ -9,7 +9,7 @@ const routesAdmin = [
     {
         path: "/",
         layout: AdminLayout,
-        component: HomeAdmin,
+        component: ReportAdmin,
         exact: true
     },
     {
@@ -18,12 +18,12 @@ const routesAdmin = [
         component: UsersAdmin,
         exact: true
     },
-    {
-        path: "/reportes",
-        layout: AdminLayout,
-        component: ReportAdmin,
-        exact: true
-    },
+    //{
+    //    path: "/reportes",
+    //    layout: AdminLayout,
+    //    component: ReportAdmin,
+    //    exact: true
+    //},
 
 ]
 

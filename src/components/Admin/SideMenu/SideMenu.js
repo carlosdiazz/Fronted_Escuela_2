@@ -24,7 +24,7 @@ function MenuLeft(props) {
         <Menu fixed="left" borderless className="side" vertical>
             <Menu.Item className='pedidoscss' as={Link} to={'/'} active={pathname === "/"}>
                 <h3>
-                    <Icon name="home"/>home
+                    <Icon name="clipboard"/>Reportes
                 </h3>
             </Menu.Item>
 
@@ -34,11 +34,11 @@ function MenuLeft(props) {
                 </h3>
             </Menu.Item>
 
-            <Menu.Item className='pedidoscss' as={Link} to={'/reportes'} active={pathname === "/reportes"}>
+            {/*<Menu.Item className='pedidoscss' as={Link} to={'/reportes'} active={pathname === "/reportes"}>
                 <h3>
                     <Icon name="clipboard"/>Reportes por entidad
                 </h3>
-            </Menu.Item>
+    </Menu.Item>*/}
 
             {auth.me?.is_staff &&(
                 <Menu.Item as={Link} to={'/users'} active={pathname === "/users"}>

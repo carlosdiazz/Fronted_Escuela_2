@@ -4,6 +4,7 @@ import {useUser} from '../../hooks/'
 import { Loader } from 'semantic-ui-react';
 import {ModalBasic} from '../../components/Common'
 import {toast} from 'react-toastify'
+import jsPDF from "jspdf";
 
 export  function UsersAdmin() {
 
@@ -26,16 +27,22 @@ export  function UsersAdmin() {
   
 
   const addUser = () => {
-    setTitleModal('Nuevo usuario')
+    setTitleModal('Nuevo Personal')
     setContenModal(<AddEditUserForm onClose={openCloseModal} onRefres={onRefres}/>)
     openCloseModal()
   }
 
   const updateUser = (data) => {
-    setTitleModal('Actualizar usuario')
+    setTitleModal('Actualizar Personal')
     setContenModal(<AddEditUserForm onClose={openCloseModal} user={data} onRefres={onRefres}/>)
     openCloseModal()
   }
+
+  const generatePDF = () => {
+    let doc = new jsPDF('p',"pt","a4");
+    doc.autoTable({html: '#Report'})
+    doc.save("reporte.pdf")
+}
 
   const onDeleteUser = async (data) => {
     // eslint-disable-next-line no-restricted-globals
@@ -54,7 +61,13 @@ export  function UsersAdmin() {
 
     return (
     <>
-        <HeaderPages title="Usuarios" btnTitle='Nuevo usuario' btnClick={addUser}/>
+        <HeaderPages
+          title="Usuarios"
+          btnTitle='Nuevo personal'
+          btnClick={addUser}
+          btnTitleTwo='Generar Reporte'
+          btnClickTwo={generatePDF}
+        />
         {loading ? (
             <Loader active inline='centered'>Cargando</Loader>
         ): (

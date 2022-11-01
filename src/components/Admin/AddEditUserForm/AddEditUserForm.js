@@ -20,7 +20,7 @@ export function AddEditUserForm(props) {
             try{
                 const newformValue = {
                     name: formValue.name,
-                    cedula: String(formValue.cedula),
+                    cedula: formValue.cedula,
                     id_anterior: formValue.id_anterior,
                     departamento: "DOCENTES"
                 }
@@ -39,7 +39,7 @@ export function AddEditUserForm(props) {
   return (
     <Form className='add-edit-user-form' onSubmit={formik.handleSubmit}>
         <Form.Input name='name' placeholder='Nombre del usuario' value={formik.values.name} error={formik.errors.name} onChange={formik.handleChange}/>
-        <Form.Input name='cedula' type='number' placeholder='Cedula' value={formik.values.cedula} error={formik.errors.cedula} onChange={formik.handleChange}/>
+        <Form.Input name='cedula' placeholder='Cedula' value={formik.values.cedula} error={formik.errors.cedula} onChange={formik.handleChange}/>
         <Form.Input name='id_anterior' placeholder='Id anterior' value={formik.values.id_anterior} error={formik.errors.id_anterior} onChange={formik.handleChange}/>
         <Button type='submit' primary fluid content={user ? 'Actualizar' : 'Crear'}/>
 
@@ -60,7 +60,7 @@ const initialValues = (user) => {
 const newSchame = () => {
     return {
         name: Yup.string().required(true),
-        cedula: Yup.number(true).required(true),
+        cedula: Yup.string().required(true),
         id_anterior: Yup.string().required(true),
         //departamento: Yup.string().required(true),
     };
@@ -69,7 +69,7 @@ const newSchame = () => {
 const updateSchame = () => {
     return {
         name: Yup.string().required(true),
-        cedula: Yup.number(true).required(true),
+        cedula: Yup.string().required(true),
         id_anterior: Yup.string().required(true),
         //departamento: Yup.string().required(true),
     };

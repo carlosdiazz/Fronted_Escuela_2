@@ -10,7 +10,7 @@ import {ModalBasic} from '../../components/Common'
 import { map } from 'lodash';
 
 import jsPDF from "jspdf";
-import autoTable from 'jspdf-autotable';
+import 'jspdf-autotable';
 
 export function ReportAdmin() {
 
@@ -30,7 +30,7 @@ export function ReportAdmin() {
 
     const generatePDF = () => {
         let doc = new jsPDF('p',"pt","a4");
-        doc.autoTable({html: '#Report'})
+        doc.autoTable({html: '#Report2'})
         doc.save("reporte.pdf")
     }
 
@@ -46,7 +46,7 @@ export function ReportAdmin() {
         title="Reportes por entidad"
         btnTitle="Generar nuevo reporte"
         btnClick={generarReporte}
-        btnTitleTwo="Imprimir Reporte"
+        btnTitleTwo="Generar Reporte"
         btnClickTwo={generatePDF}
     />
 

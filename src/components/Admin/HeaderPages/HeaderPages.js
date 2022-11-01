@@ -17,7 +17,7 @@ export function HeaderPages(props) {
             )}
 
             {btnTitleTwo && (
-                <Button negative onClick={btnClickTwo} >
+                <Button primary onClick={btnClickTwo} >
                     {btnTitleTwo}
                 </Button>
             )}
