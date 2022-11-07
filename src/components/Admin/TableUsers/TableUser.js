@@ -87,9 +87,10 @@ const Actions = (props) => {
             <Button icon onClick={()=>updateUser(user)}>
                 <Icon name='pencil'/>
             </Button>
-            <Button icon negative onClick={() => onDeleteUser(user)}>
-                <Icon name='close'></Icon>
-            </Button>
+            {/*
+                <Button icon negative onClick={() => onDeleteUser(user)}>
+                    <Icon name='close'></Icon>
+    </Button>*/}
         </Table.Cell>
     )
 }
