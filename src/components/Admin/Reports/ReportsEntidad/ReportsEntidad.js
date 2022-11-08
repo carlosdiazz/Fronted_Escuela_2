@@ -11,7 +11,7 @@ export function ReportsEntidad(props) {
   let profesores_colores = []
   const {dataReport} = props
   const [filterProfesor, setfilterProfesor] = useState('')
-  console.log(dataReport)
+  //console.log(dataReport)
   const cambiar_input_search_profesor = (value) => {
     setfilterProfesor(value.target.value)
   }

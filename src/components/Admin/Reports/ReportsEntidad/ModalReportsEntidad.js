@@ -27,12 +27,12 @@ export function ModalReportsEntidad(props) {
         validateOnChange: false,
         onSubmit: (dataForm) => {
             try{
-                console.log('submit')
-                console.log(dataForm)
+                //console.log('submit')
+                //console.log(dataForm)
                 getDataReportsEntidad(dataForm)
                 openCloseModal()
             }catch(error){
-                console.log(error)
+                //console.log(error)
             }
         }
     })

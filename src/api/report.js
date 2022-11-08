@@ -26,7 +26,7 @@ export const getReportsAPI = async(data) => {
 
         const filtro = filter(data)
         const url = `${BASE_API_URL}/registro?${filtro}`;
-        console.log(url)
+        //console.log(url)
         const response = await fetch(url)
         const result = await response.json()
         if(result.statusCode!==200){
@@ -34,6 +34,6 @@ export const getReportsAPI = async(data) => {
         }
         return result.data
     }catch(error){
-        console.log(error)
+        //console.log(error)
     }
 }
