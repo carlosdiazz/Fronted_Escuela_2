@@ -26,7 +26,7 @@ export function AuthProvider(props){
             }catch(error){
                 removeToken();
                 setAuth(null)
-                console.log(error)
+                //console.log(error)
             }
         })();
     }, []);
@@ -37,7 +37,7 @@ export function AuthProvider(props){
             const me = await getMe(token);
             setAuth({ token, me });
         }catch(error){
-            console.log(error)
+            //console.log(error)
             removeToken();
             setAuth(null)
         }
