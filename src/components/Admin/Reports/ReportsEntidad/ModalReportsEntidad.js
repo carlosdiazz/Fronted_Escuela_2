@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import {Form, Button, Dropdown} from 'semantic-ui-react';
 import moment from 'moment';
-import {TANDA_ENUMS} from '../../../../utils'
+//import {TANDA_ENUMS} from '../../../../utils'
 import { map } from 'lodash';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
@@ -13,13 +13,13 @@ export function ModalReportsEntidad(props) {
 
     const {usersFormart, getDataReportsEntidad, openCloseModal} = props
 
-    const options_tanda = [TANDA_ENUMS.MATUTINA, TANDA_ENUMS.VERPERTINA]
+    //const options_tanda = [TANDA_ENUMS.MATUTINA, TANDA_ENUMS.VERPERTINA]
 
-    const [tandasFormat, setTandasFormat] = useState([])
+    //const [tandasFormat, setTandasFormat] = useState([])
 
-    useEffect(() => {
-        setTandasFormat(formatDropdownData(options_tanda))
-    },[])
+    //useEffect(() => {
+    //    setTandasFormat(formatDropdownData(options_tanda))
+    //},[])
 
     const formik = useFormik({
         initialValues: initialValues(),
@@ -51,7 +51,7 @@ export function ModalReportsEntidad(props) {
             error={formik.errors.profesor}
         />
 
-        <h5>Tanda:</h5>
+        {/*<h5>Tanda:</h5>
         <Dropdown
             placeholder='Tanda a buscar'
             fluid selection search
@@ -59,7 +59,7 @@ export function ModalReportsEntidad(props) {
             value={formik.values.tanda}
             onChange={(_,data) => formik.setFieldValue('tanda',data.value)}
             error={formik.errors.tanda}
-        />
+  />*/}
 
         <h5>Desde:</h5>
         <Form.Input
@@ -91,13 +91,13 @@ export function ModalReportsEntidad(props) {
 }
 
 
-const formatDropdownData =(data) => {
-    return map(data,(item, index) => ({
-        key: item?._id || index,
-        text: item,
-        value: item
-    }))
-}
+//const formatDropdownData =(data) => {
+//    return map(data,(item, index) => ({
+//        key: item?._id || index,
+//        text: item,
+//        value: item
+//    }))
+//}
 
 const initialValues = () => {
     return {

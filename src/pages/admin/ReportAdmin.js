@@ -29,8 +29,9 @@ export function ReportAdmin() {
     },[showModal])
 
     const generatePDF = () => {
-        let doc = new jsPDF('p',"pt","a4");
-        doc.autoTable({html: '#Report2'})
+        let doc = new jsPDF('p', "pt", "a4");
+        //doc.text('Reporte')
+        doc.autoTable({html: '#Report2', useCss: true, })
         doc.save("reporte.pdf")
     }
 
